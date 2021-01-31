@@ -1,5 +1,8 @@
 /*11、由系统随机生成一个10以内的数字，
  * 用户随机输入一个10以内的数字，若二者相等则返回ok,否则返回ERROR*/
+#include<iostream>
+#include<time.h>
+using namespace std;
 void Equal(int para){
     srand(time(NULL));
     int num=rand();

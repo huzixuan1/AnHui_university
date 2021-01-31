@@ -1,0 +1,28 @@
+/*14、编写一个简单的计算器，操作格式为 data op data,op有+、-、*、/ */
+int Caculata(int para1,char op,int para2){
+    if(op=='+'){
+        return (para2+para2);
+    }
+    if(op=='-'){
+        return (para1-para2);
+    }
+    if(op=='*'){
+        return (para1*para2);
+    }
+    if(op=='/'){
+        return (para1/para2);
+    }
+    return 0;
+};
+int main(){
+    int num1,num2;
+    char op;
+    cout<<"第一个数字："<<endl; cin>>num1;
+    cout<<"操作："<<endl; cin>>op;
+    cout<<"第二个数字："<<endl; cin>>num2;
+    if(op=='/' && num2==0){
+        cout<<"被除数不应为0"<<endl;
+    }
+    cout<<Caculata(num1,op,num2);
+    return 0;
+}

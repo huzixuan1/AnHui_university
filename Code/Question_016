@@ -1,0 +1,26 @@
+/*16、已知从2008年12月开始，银行整存整取存款不同期限的年利率分别为：三个月1.71%、半年1.98%，一年2.25%
+ * 两年2.79%、三年3.33%、五年3.60%;
+ * 要求输入存钱的本金和期限，求利息和本金的和*/
+#define three 0.0171
+#define six 0.0198
+#define thw 0.0225
+#define two_y 0.0279
+#define three_y 0.0333
+float Return_Bank(float money,int mon){
+    if(mon==3) return (money+money*three);
+    if(mon==6) return (money+money*six);
+    if(mon==12) return (money+money*thw);
+    if(mon==24) return (money+money*two_y);
+    if(mon==36) return (money+money*three_y);
+    return 0;
+}
+int main(){
+    float money;
+    int mon;
+    cout<<"请输入本金"<<endl;
+    cin>>money;
+    cout<<"请输入存款时间"<<endl;
+    cin>>mon;
+    cout<<Return_Bank(money,mon);
+    return 0;
+}

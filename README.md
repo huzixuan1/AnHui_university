@@ -205,10 +205,10 @@ int main(){
 ### 问题08：
 
 ```cpp
-/*8、计算下列的分段函数：
- * f(x)=x^2+x-6 x<0 && x=\-3
- * f(x)=x^2-5x+6 0<=x<10 && x=\2 && x=\3
- * f(x)=x^2-x-1 others*/
+8、计算下列的分段函数：
+ f(x)=x^2+x-6 x<0 && x=\-3
+ f(x)=x^2-5x+6 0<=x<10 && x=\2 && x=\3
+ f(x)=x^2-x-1 others
 ```
 
 ```cpp
@@ -239,9 +239,9 @@ int main(){
 ### 问题09：
 
 ```cpp
-/*9、键盘接收一个字符串(只含大、小写英文字母)，将该字符串加密后输出。
- * 规则为：小写字母不变，大写的将其转换为小写后再向后移动一位，如：A->b、
- * Z->a*/
+9、键盘接收一个字符串(只含大、小写英文字母)，将该字符串加密后输出。
+ 规则为：小写字母不变，大写的将其转换为小写后再向后移动一位，如：A->b、
+ Z->a
 ```
 
 
@@ -272,7 +272,7 @@ int main(){
 ### 问题10：
 
 ```cpp
-/*10、使用键盘输入任意两个变量,若a大于b,则直接输出a,b,否则将a,b的值互换输出*/
+10、使用键盘输入任意两个变量,若a大于b,则直接输出a,b,否则将a,b的值互换输出
 ```
 
 
@@ -303,13 +303,16 @@ int main(){
 ### 问题11：
 
 ```cpp
-/*11、由系统随机生成一个10以内的数字，
- * 用户随机输入一个10以内的数字，若二者相等则返回ok,否则返回ERROR*/
+11、由系统随机生成一个10以内的数字，
+ 用户随机输入一个10以内的数字，若二者相等则返回ok,否则返回ERROR
 ```
 
 ```cpp
 /*11、由系统随机生成一个10以内的数字，
  * 用户随机输入一个10以内的数字，若二者相等则返回ok,否则返回ERROR*/
+#include<iostream>
+#include<time.h>
+using namespace std;
 void Equal(int para){
     srand(time(NULL));
     int num=rand();
@@ -328,3 +331,176 @@ int main(){
 ```
 
 ![](./Run_result/11.png)
+
+###  问题12：
+
+```cpp
+12、输入两个数字a、b,若a、b之和大于100,则输出百位上的数字，否则输出两数之和
+```
+
+```cpp
+/*12、输入两个数字a、b,若a、b之和大于100,则输出百位上的数字，否则输出两数之和*/
+int Sum_a(int para1,int para2){
+    if((para1+para2)>100){
+        int result=(para1+para2)/100;
+        return result;
+    }
+
+    return (para1+para2);
+}
+int main(){
+    cout<<"请输入两个数字:"<<endl;
+    int num1,num2;
+    cin>>num1>>num2;
+    cout<<Sum_a(num1,num2);
+    return 0;
+}
+```
+
+![](./Run_result/12.png)
+
+### 问题13：
+
+```cpp
+13、计算函数的值
+ f(x)=3x+10 100>x>=0
+ f(x)=x^3-20 x>=100
+```
+
+```cpp
+/*13、计算函数的值
+ * f(x)=3x+10 100>x>=0
+ * f(x)=x^3-20 x>=100*/
+int Function(int x){
+    if(x>=0 && x<100) return (3*x+10);
+    if(x>=100) return (x*x*x-20);
+}
+int main(){
+    cout<<"请输入一个数字:"<<endl;
+    int x;
+    cin>>x;
+    cout<<Function(x);
+    return 0;
+}
+```
+
+![](./Run_result/13.png)
+
+### 问题14：
+
+```cpp
+14、编写一个简单的计算器，操作格式为 data op data,op有+、-、*、/
+```
+
+```cpp
+/*14、编写一个简单的计算器，操作格式为 data op data,op有+、-、*、/ */
+int Caculata(int para1,char op,int para2){
+    if(op=='+'){
+        return (para2+para2);
+    }
+    if(op=='-'){
+        return (para1-para2);
+    }
+    if(op=='*'){
+        return (para1*para2);
+    }
+    if(op=='/'){
+        return (para1/para2);
+    }
+    return 0;
+};
+int main(){
+    int num1,num2;
+    char op;
+    cout<<"第一个数字："<<endl; cin>>num1;
+    cout<<"操作："<<endl; cin>>op;
+    cout<<"第二个数字："<<endl; cin>>num2;
+    if(op=='/' && num2==0){
+        cout<<"被除数不应为0"<<endl;
+    }
+    cout<<Caculata(num1,op,num2);
+    return 0;
+}
+```
+
+![](./Run_result/14.png)
+
+### 问题15：
+
+```cpp
+15、输入一个数字，判断其是否能被3、5、7整除，并输出一下信息：
+ 1）能被3、5、7整除
+ 2）能被其中的两个数整除（指出哪两个）
+ 3）能被其中一个整除（指出哪一个）
+ 4)不能被3、5、7任一个整除*/
+```
+
+```cpp
+/*15、输入一个数字，判断其是否能被3、5、7整除，并输出一下信息：
+ * 1）能被3、5、7整除
+ * 2）能被其中的两个数整除（指出哪两个）
+ * 3）能被其中一个整除（指出哪一个）
+ * 4)不能被3、5、7任一个整除*/
+int Jud_div(int para){
+    if(para%3==0 && para%5==0 && para%7==0) cout<<para<<"可以被3、5、7整除"<<endl;
+    if(para%3==0 && para%5==0 &&para%7!=0) cout<<para<<"可以被3、5整除"<<endl;
+    if(para%3==0 && para%5!=0 &&para%7==0) cout<<para<<"可以被3、7整除"<<endl;
+    if(para%3!=0 && para%5==0 &&para%7==0) cout<<para<<"可以被5、7整除"<<endl;
+    if(para%3==0 && para%5!=0 &&para%7!=0) cout<<para<<"可以被3整除"<<endl;
+    if(para%3!=0 && para%5==0 &&para%7!=0) cout<<para<<"可以被5整除"<<endl;
+    if(para%3!=0 && para%5!=0 &&para%7==0) cout<<para<<"可以被7整除"<<endl;
+    if(para%3!=0 && para%5!=0 &&para%7!=0) cout<<para<<"不可以被3、5、7整除"<<endl;
+    return 0;
+}
+int main(){
+    cout<<"请输入一个数字："<<endl;
+    int num;
+    cin>>num;
+    Jud_div(num);
+    return 0;
+}
+```
+
+![](./Run_result/15.png)
+
+### 问题16：
+
+```cpp
+16、已知从2008年12月开始，银行整存整取存款不同期限的年利率分别为：三个月1.71%、半年1.98%，一年2.25%
+两年2.79%、三年3.33%、五年3.60%;
+要求输入存钱的本金和期限，求利息和本金的和
+```
+
+```cpp
+/*16、已知从2008年12月开始，银行整存整取存款不同期限的年利率分别为：三个月1.71%、半年1.98%，一年2.25%
+ * 两年2.79%、三年3.33%、五年3.60%;
+ * 要求输入存钱的本金和期限，求利息和本金的和*/
+#define three 0.0171
+#define six 0.0198
+#define thw 0.0225
+#define two_y 0.0279
+#define three_y 0.0333
+float Return_Bank(float money,int mon){
+    if(mon==3) return (money+money*three);
+    if(mon==6) return (money+money*six);
+    if(mon==12) return (money+money*thw);
+    if(mon==24) return (money+money*two_y);
+    if(mon==36) return (money+money*three_y);
+    return 0;
+}
+int main(){
+    float money;
+    int mon;
+    cout<<"请输入本金"<<endl;
+    cin>>money;
+    cout<<"请输入存款时间"<<endl;
+    cin>>mon;
+    cout<<Return_Bank(money,mon);
+    return 0;
+}
+```
+
+![](./Run_result/16.png)
+
+### 问题17：
+

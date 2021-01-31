@@ -1,0 +1,23 @@
+/*15、输入一个数字，判断其是否能被3、5、7整除，并输出一下信息：
+ * 1）能被3、5、7整除
+ * 2）能被其中的两个数整除（指出哪两个）
+ * 3）能被其中一个整除（指出哪一个）
+ * 4)不能被3、5、7任一个整除*/
+int Jud_div(int para){
+    if(para%3==0 && para%5==0 && para%7==0) cout<<para<<"可以被3、5、7整除"<<endl;
+    if(para%3==0 && para%5==0 &&para%7!=0) cout<<para<<"可以被3、5整除"<<endl;
+    if(para%3==0 && para%5!=0 &&para%7==0) cout<<para<<"可以被3、7整除"<<endl;
+    if(para%3!=0 && para%5==0 &&para%7==0) cout<<para<<"可以被5、7整除"<<endl;
+    if(para%3==0 && para%5!=0 &&para%7!=0) cout<<para<<"可以被3整除"<<endl;
+    if(para%3!=0 && para%5==0 &&para%7!=0) cout<<para<<"可以被5整除"<<endl;
+    if(para%3!=0 && para%5!=0 &&para%7==0) cout<<para<<"可以被7整除"<<endl;
+    if(para%3!=0 && para%5!=0 &&para%7!=0) cout<<para<<"不可以被3、5、7整除"<<endl;
+    return 0;
+}
+int main(){
+    cout<<"请输入一个数字："<<endl;
+    int num;
+    cin>>num;
+    Jud_div(num);
+    return 0;
+}
