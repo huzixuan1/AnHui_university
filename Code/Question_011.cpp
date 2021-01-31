@@ -1,0 +1,17 @@
+/*11、由系统随机生成一个10以内的数字，
+ * 用户随机输入一个10以内的数字，若二者相等则返回ok,否则返回ERROR*/
+void Equal(int para){
+    srand(time(NULL));
+    int num=rand();
+    num=num%10;
+    cout<<"随机产生的数字为："<<num<<endl;
+    if(para==num) cout<<"OK";
+    cout<<"ERROR";
+}
+int main(){
+    cout<<"请输入一个10以内的数字："<<endl;
+    int num;
+    cin>>num;
+    Equal(num);
+    return 0;
+}
