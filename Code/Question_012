@@ -1,0 +1,16 @@
+/*12、输入两个数字a、b,若a、b之和大于100,则输出百位上的数字，否则输出两数之和*/
+int Sum_a(int para1,int para2){
+    if((para1+para2)>100){
+        int result=(para1+para2)/100;
+        return result;
+    }
+
+    return (para1+para2);
+}
+int main(){
+    cout<<"请输入两个数字:"<<endl;
+    int num1,num2;
+    cin>>num1>>num2;
+    cout<<Sum_a(num1,num2);
+    return 0;
+}
