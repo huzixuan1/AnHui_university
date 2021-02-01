@@ -1,0 +1,11 @@
+/*19、输出200以内所有能被7整除的数*/
+int Div_Sev(){
+    for(int i=1;i<=200;i++){
+        if(i%7==0) cout<<i<<"\t";
+    }
+    return 0;
+}
+int main(){
+    Div_Sev();
+    return 0;
+}

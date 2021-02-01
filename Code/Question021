@@ -1,0 +1,21 @@
+/*21、键盘输入正整数m、n(m<n),计算m~n间的奇数之和、偶数之和*/
+void Sum_index(int m,int n){
+    int sum_one,sum_two;
+    for(int i=m;i<=n;i++){
+        if(i%2==0){
+            sum_two+=i;
+        } else{
+            sum_one+=i;
+        }
+    }
+    cout<<"偶数之和："<<sum_two<<"\t"<<"奇数之和："<<sum_one<<endl;
+}
+int main(){
+    int m,n;
+    cout<<"请输入起始范围："<<endl;
+    cin>>m;
+    cout<<"请输入结束范围："<<endl;
+    cin>>n;
+    Sum_index(m,n);
+    return 0;
+}

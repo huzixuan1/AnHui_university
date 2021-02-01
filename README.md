@@ -588,3 +588,89 @@ int main(){
 ```
 
 ![](./Run_result/18.png)
+
+### 问题19：
+
+```cpp
+19、输出200以内所有能被7整除的数
+```
+
+```cpp
+/*19、输出200以内所有能被7整除的数*/
+int Div_Sev(){
+    for(int i=1;i<=200;i++){
+        if(i%7==0) cout<<i<<"\t";
+    }
+    return 0;
+}
+int main(){
+    Div_Sev();
+    return 0;
+}
+```
+
+![](./Run_result/19.png)
+
+### 问题20：
+
+```cpp
+20、从键盘上输出n个数字（n<10）,找出其中最小的数字
+```
+
+```cpp
+/*20、从键盘上输出n个数字（n<10）,找出其中最小的数字*/
+int Find_min(int n){
+    int num,min;
+    for(int i=1;i<=n;i++){
+        cout<<"请输入第"<<i<<"个数："<<endl;
+        cin>>num;
+        if(i==1) min=num;
+        if(min>num) min=num;
+    }
+    return min;
+}
+int main(){
+    int n;
+    cout<<"请输入一个小于10的输入范围:";
+    cin>>n;
+    cout<<"最小值为："<<Find_min(n);
+    return 0;
+}
+```
+
+![](./Run_result/20.png)
+
+### 问题21:
+
+```cpp
+21、键盘输入正整数m、n(m<n),计算m~n间的奇数之和、偶数之和
+```
+
+```cpp
+/*21、键盘输入正整数m、n(m<n),计算m~n间的奇数之和、偶数之和*/
+void Sum_index(int m,int n){
+    int sum_one,sum_two;
+    for(int i=m;i<=n;i++){
+        if(i%2==0){
+            sum_two+=i;
+        } else{
+            sum_one+=i;
+        }
+    }
+    cout<<"偶数之和："<<sum_two<<"\t"<<"奇数之和："<<sum_one<<endl;
+}
+int main(){
+    int m,n;
+    cout<<"请输入起始范围："<<endl;
+    cin>>m;
+    cout<<"请输入结束范围："<<endl;
+    cin>>n;
+    Sum_index(m,n);
+    return 0;
+}
+```
+
+![](./Run_result/21.png)
+
+### 问题22：
+
