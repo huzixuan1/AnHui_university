@@ -1,0 +1,23 @@
+/*22、计算函数y的值，接收x的值，若x不为0则输出y的值，直到x为0时，输出Thank You Bye!
+ * 对应的函数关系：
+ * f(x)=3x+10 (100>x>0)
+ * f(x)=x*x*x-20(x>=100)*/
+int Cacula(float x){
+    if(x>0 && x<100) return 3*x+10;
+    if(x>=100) return x*x*x-20;
+    return 0;
+}
+int main(){
+    float num;
+    while (1){
+        cout<<"请输入一个数字："<<endl;
+        cin>>num;
+        if(num==0){
+            cout<<"Thank You Bye!"<<endl;
+            exit(0);
+        } else{
+            cout<<"结果为："<<Cacula(num)<<endl;
+        }
+    }
+    return 0;
+}

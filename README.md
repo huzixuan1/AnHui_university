@@ -674,3 +674,75 @@ int main(){
 
 ### 问题22：
 
+```cpp
+22、计算函数y的值，接收x的值，若x不为0则输出y的值，直到x为0时，输出Thank You Bye!
+ 对应的函数关系：
+ f(x)=3x+10 (100>x>0)
+ f(x)=x*x*x-20(x>=100)
+```
+
+```cpp
+/*22、计算函数y的值，接收x的值，若x不为0则输出y的值，直到x为0时，输出Thank You Bye!
+ * 对应的函数关系：
+ * f(x)=3x+10 (100>x>0)
+ * f(x)=x*x*x-20(x>=100)*/
+int Cacula(float x){
+    if(x>0 && x<100) return 3*x+10;
+    if(x>=100) return x*x*x-20;
+    return 0;
+}
+int main(){
+    float num;
+    while (1){
+        cout<<"请输入一个数字："<<endl;
+        cin>>num;
+        if(num==0){
+            cout<<"Thank You Bye!"<<endl;
+            exit(0);
+        } else{
+            cout<<"结果为："<<Cacula(num)<<endl;
+        }
+    }
+    return 0;
+}
+```
+
+![](./Run_result/22.png)
+
+### 问题23：
+
+```cpp
+23、求出分数的前20项之和：2/1、3/2、5/3、8/5……
+```
+
+```cpp
+/*23、求出分数的前20项之和：2/1、3/2、5/3、8/5……*/
+int Sum_Tw(){
+    float f1,f2,f,sum;
+    f1=2;
+    f2=1;
+    sum=0;
+    for(int i=0;i<20;i++){
+        f=f1/f2;
+        sum+=f;
+        f=f1;
+        f1=f+f2;
+        f2=f;
+        cout<<"前"<<i+1<<"项和为："<<sum<<endl;
+    }
+    cout<<"最终结果为："<<sum<<endl;
+    return 0;
+}
+int main(){
+    Sum_Tw();
+    return 0;
+}
+```
+
+![](./Run_result/23.png)
+
+### 问题24：
+
+```cpp
+24、我过现在13亿人口，年增长率为1%，求多少年后增长到20亿
+```
