@@ -900,3 +900,35 @@ int main(){
 ```
 
 ![](./Run_result/28.png)
+
+### 问题29：
+
+```cpp
+29、打印出所有的水仙花数
+```
+
+
+
+```cpp
+/*29、打印出所有的水仙花数*/
+void Ques_flo(){
+    int a,b,c;
+    for(int i=100;i<=999;i++){
+        a=i/100;
+        b=(i/10)%10;
+        c=i%10;
+        if(i==a*a*a+b*b*b+c*c*c){
+            cout<<i<<endl;
+        }
+    }
+}
+int main(){
+    Ques_flo();
+    return 0;
+}
+```
+
+![](./Run_result/29.png)
+
+### 问题30：
+
