@@ -744,5 +744,159 @@ int main(){
 ### 问题24：
 
 ```cpp
-24、我过现在13亿人口，年增长率为1%，求多少年后增长到20亿
+24、我国现在13亿人口，年增长率为1%，求多少年后增长到20亿
 ```
+
+```cpp
+/*24、我国现在13亿人口，年增长率为1%，求多少年后增长到20亿*/
+
+int Increa(){
+    float sum=13;
+    int year=1;
+    do{
+        sum=sum*0.01+sum;
+        year+=1;
+    }while (sum<=20);
+    return year;
+}
+
+int main(){
+    cout<<Increa()<<"年后人口将超过20亿"<<endl;
+    return 0;
+}
+```
+
+![](./Run_result/24.png)
+
+### 问题25：
+
+```cpp
+25、求解爱因斯坦数学题。有一条长阶梯，若每步跨2阶，最后剩余1个;
+ 若每步跨3阶，最后剩2个;若每步跨5阶，剩4个;若每步跨6个，最后剩5个，
+ 若跨7个，最后一个不剩。问：有多少个台阶。
+```
+
+```cpp
+/*25、求解爱因斯坦数学题。有一条长阶梯，若每步跨2阶，最后剩余1个;
+ * 若每步跨3阶，最后剩2个;若每步跨5阶，剩4个;若每步跨6个，最后剩5个，
+ * 若跨7个，最后一个不剩。问：有多少个台阶。*/
+int Ques_st(){
+    int num=7;
+    do{
+        if(num%2!=1){
+            num++;
+            continue;
+        }
+        if(num%3!=2){
+            num++;
+            continue;
+        }
+        if(num%5!=4){
+            num++;
+            continue;
+        }
+        if(num%6!=5){
+            num++;
+            continue;
+        }
+        if(num%7!=0){
+            break;
+        }
+    }while(true);
+    return num;
+}
+int main(){
+    cout<<Ques_st();
+    return 0;
+}
+```
+
+![](./Run_result/25.png)
+
+### 问题26：
+
+```cpp
+26、每个苹果0.8元，第一天买2个，第二天开始，每天买前一天的2倍，
+ 直到购买的苹果个数达到不超过100的最大整数，则其平均每天花多少钱
+```
+
+```cpp
+/*26、每个苹果0.8元，第一天买2个，第二天开始，每天买前一天的2倍，
+ * 直到购买的苹果个数达到不超过100的最大整数，则其平均每天花多少钱*/
+void Ques_app(){
+    int num=0,day=0,n=1;
+    do{
+        day++;
+        n=n*2;
+        num=num+n;
+    }while(num+n*2<=100);
+    cout<<"共买了"<<num<<"个苹果，"<<"平均花费："<<(num*0.8)/day<<"元"<<endl;
+}
+int main(){
+    Ques_app();
+    return 0;
+}
+```
+
+![](./Run_result/26.png)
+
+### 问题27：
+
+```cpp
+27、求一个整数任意次方的最后三位数。
+```
+
+```cpp
+/*27、求一个整数任意次方的最后三位数。*/
+int Ques_num(int x,int y){
+    long num,result;
+    num=pow(x,y);
+    result=num%1000;
+    return result;
+}
+int main(){
+    int x,y;
+    cout<<"请输入x和y的值："<<endl;
+    cin>>x>>y;
+    cout<<"结果为："<<Ques_num(x,y);
+    return 0;
+}
+```
+
+![](./Run_result/27.png)
+
+### 问题28：
+
+```cpp
+28、输入6名学生的5门成绩，分别统计各个学生的平均成绩
+```
+
+```cpp
+/*28、输入6名学生的5门成绩，分别统计各个学生的平均成绩*/
+void Ques_stu(){
+    string stu_name;
+    float sco1,sco2,sco3,sco4,sco5,avg;
+    for(int i=1;i<=6;i++){
+        cout<<"请输入第："<<i<<"名学生姓名:"<<endl;
+        cin>>stu_name;
+        cout<<"请输入学生的第一门科目成绩："<<endl;
+        cin>>sco1;
+        cout<<"请输入学生的二门科目成绩："<<endl;
+        cin>>sco2;
+        cout<<"请输入学生的第三门科目成绩："<<endl;
+        cin>>sco3;
+        cout<<"请输入学生的第四门科目成绩："<<endl;
+        cin>>sco4;
+        cout<<"请输入学生的第五门科目成绩："<<endl;
+        cin>>sco5;
+        avg=(sco1+sco2+sco3+sco4+sco5)/5;
+        cout<<stu_name<<"同学的平均成绩为："<<avg<<endl;
+    }
+}
+int main(){
+    Ques_stu();
+    return 0;
+}
+```
+
+![](./Run_result/28.png)

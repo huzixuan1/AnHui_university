@@ -1,0 +1,14 @@
+/*27、求一个整数任意次方的最后三位数。*/
+int Ques_num(int x,int y){
+    long num,result;
+    num=pow(x,y);
+    result=num%1000;
+    return result;
+}
+int main(){
+    int x,y;
+    cout<<"请输入x和y的值："<<endl;
+    cin>>x>>y;
+    cout<<"结果为："<<Ques_num(x,y);
+    return 0;
+}

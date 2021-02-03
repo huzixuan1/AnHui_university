@@ -1,0 +1,25 @@
+/*28、输入6名学生的5门成绩，分别统计各个学生的平均成绩*/
+void Ques_stu(){
+    string stu_name;
+    float sco1,sco2,sco3,sco4,sco5,avg;
+    for(int i=1;i<=6;i++){
+        cout<<"请输入第："<<i<<"名学生姓名:"<<endl;
+        cin>>stu_name;
+        cout<<"请输入学生的第一门科目成绩："<<endl;
+        cin>>sco1;
+        cout<<"请输入学生的二门科目成绩："<<endl;
+        cin>>sco2;
+        cout<<"请输入学生的第三门科目成绩："<<endl;
+        cin>>sco3;
+        cout<<"请输入学生的第四门科目成绩："<<endl;
+        cin>>sco4;
+        cout<<"请输入学生的第五门科目成绩："<<endl;
+        cin>>sco5;
+        avg=(sco1+sco2+sco3+sco4+sco5)/5;
+        cout<<stu_name<<"同学的平均成绩为："<<avg<<endl;
+    }
+}
+int main(){
+    Ques_stu();
+    return 0;
+}

@@ -1,0 +1,16 @@
+/*24、我国现在13亿人口，年增长率为1%，求多少年后增长到20亿*/
+
+int Increa(){
+    float sum=13;
+    int year=1;
+    do{
+        sum=sum*0.01+sum;
+        year+=1;
+    }while (sum<=20);
+    return year;
+}
+
+int main(){
+    cout<<Increa()<<"年后人口将超过20亿"<<endl;
+    return 0;
+}
