@@ -1,0 +1,13 @@
+/*31、用循环语句计算：s=1+12+123+1234+12345+123456+1234567*/
+int Ques_Cal(){
+    int sum=0,p=0;
+    for(int i=1;i<=7;i++){
+        p=10*p+i;
+        sum+=p;
+    }
+    return sum;
+}
+int main(){
+    cout<<Ques_Cal();
+    return 0;
+}

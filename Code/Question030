@@ -1,0 +1,39 @@
+/*30、请使用三种循环结构计算出：1！+2！+3！+……n!的结果
+ * 其中n的值由键盘输入*/
+int Ques_Res1(int n){
+    int p=1,sum=0;
+    for(int i=1;i<=n;i++){
+        p*=i;
+        sum+=p;
+    }
+    return sum;
+}
+
+int Ques_Res2(int n){
+    int i=1,p=1,sum=0;
+    do{
+        p*=i;
+        sum+=p;
+        i++;
+    }while(i<=n);
+    return sum;
+}
+
+int Ques_Res3(int n){
+    int i=1,p=1,sum=0;
+    while(i<=n){
+        p*=i;
+        sum+=p;
+        i++;
+    }
+    return sum;
+}
+int main(){
+    int num;
+    cout<<"请输入一个数字："<<endl;
+    cin>>num;
+//    cout<<Ques_Res1(num); /*分别调用不同的循环方法*/
+//    cout<<Ques_Res2(num);
+    cout<<Ques_Res3(num);
+    return 0;
+}

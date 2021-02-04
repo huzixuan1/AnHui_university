@@ -932,3 +932,78 @@ int main(){
 
 ### 问题30：
 
+```cpp
+30、请使用三种循环结构计算出：1！+2！+3！+……n!的结果
+ 其中n的值由键盘输入
+```
+
+```cpp
+/*30、请使用三种循环结构计算出：1！+2！+3！+……n!的结果
+ * 其中n的值由键盘输入*/
+int Ques_Res1(int n){
+    int p=1,sum=0;
+    for(int i=1;i<=n;i++){
+        p*=i;
+        sum+=p;
+    }
+    return sum;
+}
+
+int Ques_Res2(int n){
+    int i=1,p=1,sum=0;
+    do{
+        p*=i;
+        sum+=p;
+        i++;
+    }while(i<=n);
+    return sum;
+}
+
+int Ques_Res3(int n){
+    int i=1,p=1,sum=0;
+    while(i<=n){
+        p*=i;
+        sum+=p;
+        i++;
+    }
+    return sum;
+}
+int main(){
+    int num;
+    cout<<"请输入一个数字："<<endl;
+    cin>>num;
+//    cout<<Ques_Res1(num); /*分别调用不同的循环方法*/
+//    cout<<Ques_Res2(num);
+    cout<<Ques_Res3(num);
+    return 0;
+}
+```
+
+![](./Run_result/30.png)
+
+### 问题31：
+
+```cpp
+31、用循环语句计算：s=1+12+123+1234+12345+123456+1234567
+```
+
+```cpp
+/*31、用循环语句计算：s=1+12+123+1234+12345+123456+1234567*/
+int Ques_Cal(){
+    int sum=0,p=0;
+    for(int i=1;i<=7;i++){
+        p=10*p+i;
+        sum+=p;
+    }
+    return sum;
+}
+int main(){
+    cout<<Ques_Cal();
+    return 0;
+}
+```
+
+![](./Run_result/31.png)
+
+### 问题32:
+
