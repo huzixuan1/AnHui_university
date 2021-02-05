@@ -1,0 +1,31 @@
+/*34、从键盘上输入10个正整数进行求和，如果错误的输入了负数则求和结束。
+ * 分别使用带有break、不带有break的方法进行*/
+int Ques_S1(){
+    int sum=0,num;
+    for(int i=0;i<10;i++){
+        cout<<"请输入第"<<i+1<<"个数字："<<endl;
+        cin>>num;
+        if(num<0){
+            cout<<"输入的数字小于0,停止求和，当前和为："<<sum<<endl;
+            break;
+        }
+        sum+=num;
+    }
+    return sum;
+}
+
+int Ques_S2(){
+    int sum=0,i=1,num;
+    do{
+        cout<<"请输入第"<<i<<"个数字："<<endl;
+        cin>>num;
+        sum+=num;
+        i++;
+    }while(sum>=0&&num>=0);
+    return sum;
+}
+int main(){
+//  cout<<Ques_S1();  // 方法1
+    cout<<"最终求和结果："<<Ques_S2(); // 方法2
+    return 0;
+}

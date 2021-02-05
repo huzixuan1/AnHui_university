@@ -1,0 +1,18 @@
+/*32、输出杨辉三角的第十行*/
+void Ques_Yang(){
+   int arr[10]={1,1};
+    cout<<"第1行："<<arr[0]<<"\n"<<"第2行："<<"\t"<<arr[0]<<"\t"<<arr[1]<<endl;
+   for(int i=2;i<10;i++){
+       cout<<"第"<<i+1<<"行:"<<"\t";
+       arr[i]=1;
+       for(int j=i-1;j>=1;j--)
+           arr[j]+=arr[j-1];
+           for(int k=0;k<=i;k++)
+               cout<<arr[k]<<"\t";
+           cout<<"\n";
+   }
+}
+int main(){
+    Ques_Yang();
+    return 0;
+}

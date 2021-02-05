@@ -1,0 +1,24 @@
+/*36、计算500以内最大的10个素数之和*/
+void Ques_S3(){
+    int count=0,sum=0;
+    for (int i = 500; i>2; i--) {
+        for(int j=2;j<=i;j++){
+            if(i==j){
+                sum+=i;
+                count++;
+                cout<<"第"<<count<<"个素数为："<<i<<endl;
+            }
+            if(i%j==0){
+                break;
+            }
+            if(count==10){
+                break;
+            }
+        }
+    }
+    cout<<"所有素数和为："<<sum;
+}
+int main(){
+    Ques_S3();
+    return 0;
+}

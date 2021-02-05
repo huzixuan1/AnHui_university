@@ -1007,3 +1007,170 @@ int main(){
 
 ### 问题32:
 
+```cpp
+32、输出杨辉三角的第十行
+```
+
+```cpp
+/*32、输出杨辉三角的第十行*/
+void Ques_Yang(){
+   int arr[10]={1,1};
+    cout<<"第1行："<<arr[0]<<"\n"<<"第2行："<<"\t"<<arr[0]<<"\t"<<arr[1]<<endl;
+   for(int i=2;i<10;i++){
+       cout<<"第"<<i+1<<"行:"<<"\t";
+       arr[i]=1;
+       for(int j=i-1;j>=1;j--)
+           arr[j]+=arr[j-1];
+           for(int k=0;k<=i;k++)
+               cout<<arr[k]<<"\t";
+           cout<<"\n";
+   }
+}
+int main(){
+    Ques_Yang();
+    return 0;
+}
+```
+
+![](./Run_result/32.png)
+
+### 问题33：
+
+```cpp
+33、打印出由1,2,3,4四个数字组成的4位数，并统计它的个数
+ （允许该4位数中有相同的数字，例如：1111、2222、3333、4444）
+```
+
+```cpp
+/*33、打印出由1,2,3,4四个数字组成的4位数，并统计它的个数
+ * （允许该4位数中有相同的数字，例如：1111、2222、3333、4444）*/
+void Ques_Arr(){
+    int n,num=0;
+    for(int a=1;a<=4;a++){
+        for(int b=1;b<=4;b++){
+            for(int c=1;c<=4;c++){
+                for(int d=1;d<=4;d++){
+                    n=1000*a+100*b+10*c+d;
+                    cout<<"第"<<num+1<<"个数："<<n<<endl;
+                    num++;
+                }
+            }
+        }
+    }
+    cout<<"共有"<<num<<"个"<<endl;
+}
+int main(){
+    Ques_Arr();
+    return 0;
+}
+```
+
+![](./Run_result/33.png)
+
+### 问题34:
+
+```cpp
+34、从键盘上输入10个正整数进行求和，如果错误的输入了负数则求和结束。
+ 分别使用带有break、不带有break的方法进行
+```
+
+```cpp
+/*34、从键盘上输入10个正整数进行求和，如果错误的输入了负数则求和结束。
+ * 分别使用带有break、不带有break的方法进行*/
+int Ques_S1(){
+    int sum=0,num;
+    for(int i=0;i<10;i++){
+        cout<<"请输入第"<<i+1<<"个数字："<<endl;
+        cin>>num;
+        if(num<0){
+            cout<<"输入的数字小于0,停止求和，当前和为："<<sum<<endl;
+            break;
+        }
+        sum+=num;
+    }
+    return sum;
+}
+
+int Ques_S2(){
+    int sum=0,i=1,num;
+    do{
+        cout<<"请输入第"<<i<<"个数字："<<endl;
+        cin>>num;
+        sum+=num;
+        i++;
+    }while(sum>=0&&num>=0);
+    return sum;
+}
+int main(){
+//  cout<<Ques_S1();  // 方法1
+    cout<<"最终求和结果："<<Ques_S2(); // 方法2
+    return 0;
+}
+```
+
+![](./Run_result/34.png)
+
+### 问题35：
+
+```cpp
+35、输出30以内符合勾股定理的组合
+```
+
+```cpp
+/*35、输出30以内符合勾股定理的组合*/
+void Ques_th(){
+    for(int i=1;i<=30;i++){
+        for(int j=1;j<=30;j++){
+            for(int k=1;k<=30;k++){
+                if(i*i==j*j+k*k){
+                    cout<<j<<"\t"<<k<<"\t"<<i<<endl;
+                }
+            }
+        }
+    }
+}
+int main(){
+    Ques_th();
+    return 0;
+}
+```
+
+![](./Run_result/35.png)
+
+### 问题36：
+
+```cpp
+36、计算500以内最大的10个素数之和
+```
+
+```cpp
+/*36、计算500以内最大的10个素数之和*/
+void Ques_S3(){
+    int count=0,sum=0;
+    for (int i = 500; i>2; i--) {
+        for(int j=2;j<=i;j++){
+            if(i==j){
+                sum+=i;
+                count++;
+                cout<<"第"<<count<<"个素数为："<<i<<endl;
+            }
+            if(i%j==0){
+                break;
+            }
+            if(count==10){
+                break;
+            }
+        }
+    }
+    cout<<"所有素数和为："<<sum;
+}
+int main(){
+    Ques_S3();
+    return 0;
+}
+```
+
+![](./Run_result/36.png)
+
+### 问题37：
+
