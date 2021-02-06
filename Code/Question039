@@ -1,0 +1,17 @@
+/*39、求一个正整数的位数*/
+int Ques_Set(long num){
+    int n=0,m=1;
+    do{
+        if(num/m!=0){
+            n++;
+            m*=10;
+        } else{
+            break;
+        }
+    }while(1);
+    return n;
+}
+int main(){
+    cout<<"该数为一个"<<Ques_Set(123456789)<<"位数"<<endl;
+    return 0;
+}

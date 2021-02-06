@@ -1174,3 +1174,115 @@ int main(){
 
 ### 问题37：
 
+```cpp
+验证2000的歌德巴赫猜想（对于任何的大于4的偶数均可以分解为两个素数之和）
+```
+
+```cpp
+/*37、验证2000的歌德巴赫猜想（对于任何的大于4的偶数均可以分解为两个素数之和）*/
+int Ques_Ge(int num){
+    int a,b,sum,m;
+    cout<<"关于"<<num<<"的歌德巴赫猜想如下:"<<endl;
+    for(int i=2;i<=num;i++){
+        sum=1;
+        for(int j=2;j<i;j++){
+            if(i%j!=0){
+                sum+=1;
+            }
+        }
+        if(sum==(i-1)){
+            if((i+1)==num){
+                a=i;
+                b=1;
+                cout<<num<<"="<<a<<"+"<<b<<endl;
+            } else{
+                for(int k=2;k<=i;k++){
+                    m=1;
+                    for(int l=2;l<k;l++){
+                        if(k%l!=0){
+                            m+=1;
+                        }
+                    }
+                    if(m==(k-1)){
+                            if((i+k)==num&&i!=k){
+                                a=i;
+                                b=k;
+                                cout<<num<<"="<<a<<"+"<<b<<endl;
+                            }
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+int main(){
+    Ques_Ge(2000);
+    return 0;
+}
+```
+
+![](./Run_result/37.png)
+
+### 问题38：
+
+```cpp
+38、将一个正整数分解为质因数例如：90=2*3*3*5*
+```
+
+### 问题39：
+
+```cpp
+39、求一个正整数的位数
+```
+
+```cpp
+/*39、求一个正整数的位数*/
+int Ques_Set(long num){
+    int n=0,m=1;
+    do{
+        if(num/m!=0){
+            n++;
+            m*=10;
+        } else{
+            break;
+        }
+    }while(1);
+    return n;
+}
+int main(){
+    cout<<"该数为一个"<<Ques_Set(123456789)<<"位数"<<endl;
+    return 0;
+}
+```
+
+![](./Run_result/39.png)
+
+### 问题40：
+
+```cpp
+40、求一个3x3矩阵的副对角线上所有奇数的和
+```
+
+```cpp
+/*40、求一个3x3矩阵的副对角线上所有奇数的和*/
+int Ques_J(){
+    int sum=0,a[3][3];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<"请输入第"<<i+1<<"行"<<j+1<<"列矩阵元素:"<<endl;
+            cin>>a[i][j];
+            if(i+j==2&&a[i][j]%2!=0){
+                sum+=a[i][j];
+            }
+        }
+    }
+    return sum;
+}
+int main(){
+    cout<<"副对角线上的元素之和为："<<Ques_J();
+    return 0;
+}
+```
+
+![](./Run_result/40.png)

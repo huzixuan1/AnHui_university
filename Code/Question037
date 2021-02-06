@@ -1,0 +1,43 @@
+/*37、验证2000的歌德巴赫猜想（对于任何的大于4的偶数均可以分解为两个素数之和）*/
+int Ques_Ge(int num){
+    int a,b,sum,m;
+    cout<<"关于"<<num<<"的歌德巴赫猜想如下:"<<endl;
+    for(int i=2;i<=num;i++){
+        sum=1;
+        for(int j=2;j<i;j++){
+            if(i%j!=0){
+                sum+=1;
+            }
+        }
+        if(sum==(i-1)){
+            if((i+1)==num){
+                a=i;
+                b=1;
+                cout<<num<<"="<<a<<"+"<<b<<endl;
+            } else{
+                for(int k=2;k<=i;k++){
+                    m=1;
+                    for(int l=2;l<k;l++){
+                        if(k%l!=0){
+                            m+=1;
+                        }
+                    }
+                    if(m==(k-1)){
+                            if((i+k)==num&&i!=k){
+                                a=i;
+                                b=k;
+                                cout<<num<<"="<<a<<"+"<<b<<endl;
+                            }
+                    }
+                }
+            }
+        }
+    }
+
+
+    return 0;
+}
+int main(){
+    Ques_Ge(2000);
+    return 0;
+}
