@@ -1227,8 +1227,77 @@ int main(){
 ### 问题38：
 
 ```cpp
-38、将一个正整数分解为质因数例如：90=2*3*3*5*
+38、将一个正整数分解为质因数例如：90=2*3*3*5
 ```
+
+```cpp
+/*38、将一个正整数分解为质因数例如：90=2*3*3*5*/
+#define MaxSize 100
+typedef int SElemType;
+
+typedef struct {
+    SElemType *base;
+    SElemType *top;
+    int stacksize;
+}SqStack;
+
+void InitStack(SqStack &s){
+    s.base=new SElemType[MaxSize];
+    if(!s.base) exit(0);
+    s.top=s.base;
+    s.stacksize=MaxSize;
+}
+
+int push(SqStack &s,SElemType e){
+    if(s.top-s.base==s.stacksize) return 0;
+    *s.top=e;
+    s.top++;
+    return 1;
+}
+
+void printStack(SqStack s){
+    SElemType *p=s.base;
+    while(p!=s.top){
+        cout<<*p;
+        p++;
+        if(p!=s.top){
+            cout<<"*";
+        }
+    }
+    cout<<"\n";
+}
+void Ques_Div(int n){
+    SqStack s;
+    InitStack(s);
+    while(n>=1){
+        if(n%2==0){
+            push(s,2);
+            n/=2;
+        }else if(n%3==0){
+            push(s,3);
+            n/=3;
+        } else if(n%5==0){
+            push(s,5);
+            n/=5;
+        } else if(n%7==0){
+            push(s,7);
+            n/=7;
+        } else{
+            break;
+        }
+    }
+    printStack(s);
+}
+
+int main(){
+    Ques_Div(90);
+    return 0;
+}
+```
+
+![](./Run_result/38(1).png)
+
+![](./Run_result/38(2).png)
 
 ### 问题39：
 
@@ -1286,3 +1355,6 @@ int main(){
 ```
 
 ![](./Run_result/40.png)
+
+### 问题41：
+
