@@ -1,0 +1,17 @@
+/*44、从键盘输入两个字符串a、b，要求不用库函数strcat,把b的前5个字符串接到a中；
+ * 如果b中的长度小于5,则把b的所用元素接到a中*/
+void Ques_Cat(string a,string b){
+    int len=b.length();
+    if(len<=5){
+        a+=b;
+    }else if(len>5){
+        for(int i=0;i<5;i++){
+            a+=b[i];
+        }
+    }
+    cout<<a<<endl;
+}
+int main(){
+    Ques_Cat("huzixuan","is the student of A");
+    return 0;
+}

@@ -1,0 +1,19 @@
+/*43、通过循环按行顺序为一个5x5的二维数组a赋值1到25的自然数，然后输出该数组的左下半角元素的值*/
+void Ques_M(){
+    int a[5][5];
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            a[i][j]=i*5+j+1;
+        }
+    }
+    for(int i=0;i<5;i++){
+        for(int j=0;j<=i;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<endl;
+    }
+}
+int main(){
+    Ques_M();
+    return 0;
+}

@@ -1,0 +1,53 @@
+/*45、定义两个N行N列的二维数组a,b,编写程序，将a数组最后一行放到b数组的第0列中，
+ * 把数组a的第0行放到b数组的最后一列中，b所指二维数组中其他元素的数据不变*/
+void Ques_N_N(){
+    int a[3][3]={1,2,3,4,5,6,7,8,9};
+    int b[3][3]={11,12,13,14,15,16,17,18,19};
+    cout<<"输出前a数组："<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    cout<<"输入前b数组："<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<b[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    cout<<"将a数组最后一行放到b数组的第0列中"<<endl;
+    cout<<"把数组a的第0行放到b数组的最后一列中"<<endl;
+    for(int i=0;i<3;i++){
+        int temp;
+        temp=a[2][i];
+        a[2][i]=b[i][0];
+        b[i][0]=temp;
+
+        temp=b[i][2];
+        b[i][2]=a[0][i];
+        a[0][i]=temp;
+
+    }
+    cout<<"输出a数组"<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+    cout<<"输出b数组"<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<b[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+int main(){
+    Ques_N_N();
+    return 0;
+}

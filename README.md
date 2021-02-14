@@ -1435,3 +1435,181 @@ int main(){
 
 ### 问题42：
 
+```cpp
+42、定义一个含有30个元素的整型元素的数组a，按照顺序输入从2开始的偶数;
+ 然后按顺序每五个数求出一个平均值，放在另一数组b中存储，输出数组b中的6个元素
+```
+
+```cpp
+/*42、定义一个含有30个元素的整型元素的数组a，按照顺序输入从2开始的偶数;
+ * 然后按顺序每五个数求出一个平均值，放在另一数组b中存储，输出数组b中的6个元素*/
+void Ques_N(){
+    int b[6],a[30]={2,4,6,8,10,12,14,16,18,20,22,24,26,
+               28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60};
+    int sum1=0,sum2=0,sum3=0,sum4=0,sum5=0,sum6=0;
+    for(int i=0;i<30;i++){
+        if(i>=0&&i<5){
+            sum1+=a[i];
+        }
+        if(i>=5&&i<10){
+            sum2+=a[i];
+        }
+        if(i>=10&&i<15){
+            sum3+=a[i];
+        }
+        if(i>=15&&i<20){
+            sum4+=a[i];
+        }
+        if(i>=20&&i<25){
+            sum5+=a[i];
+        }
+        if(i>=25&&i<30){
+            sum6+=a[i];
+        }
+    }
+
+    b[0]=sum1/5;
+    b[1]=sum2/5;
+    b[2]=sum3/5;
+    b[3]=sum4/5;
+    b[4]=sum5/5;
+    b[5]=sum6/5;
+
+    for(int i=0;i<6;i++){
+        cout<<"第"<<i+1<<"个平均数："<<b[i]<<endl;
+    }
+
+}
+int main(){
+    Ques_N();
+    return 0;
+}
+```
+
+![](./Run_result/42.png)
+
+### 问题43：
+
+```cpp
+43、通过循环按行顺序为一个5x5的二维数组a赋值1到25的自然数，然后输出该数组的左下半角元素的值
+```
+
+```cpp
+/*43、通过循环按行顺序为一个5x5的二维数组a赋值1到25的自然数，然后输出该数组的左下半角元素的值*/
+void Ques_M(){
+    int a[5][5];
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            a[i][j]=i*5+j+1;
+        }
+    }
+    for(int i=0;i<5;i++){
+        for(int j=0;j<=i;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<endl;
+    }
+}
+int main(){
+    Ques_M();
+    return 0;
+}
+```
+
+![](./Run_result/43.png)
+
+### 问题44：
+
+```cpp
+44、从键盘输入两个字符串a、b，要求不用库函数strcat,把b的前5个字符串接到a中；
+ 如果b中的长度小于5,则把b的所用元素接到a中
+```
+
+```cpp
+/*44、从键盘输入两个字符串a、b，要求不用库函数strcat,把b的前5个字符串接到a中；
+ * 如果b中的长度小于5,则把b的所用元素接到a中*/
+void Ques_Cat(string a,string b){
+    int len=b.length();
+    if(len<=5){
+        a+=b;
+    }else if(len>5){
+        for(int i=0;i<5;i++){
+            a+=b[i];
+        }
+    }
+    cout<<a<<endl;
+}
+int main(){
+    Ques_Cat("huzixuan","is the student of A");
+    return 0;
+}
+```
+
+![](./Run_result/44.png)
+
+### 问题45：
+
+```cpp
+45、定义两个N行N列的二维数组a,b,编写程序，将a数组最后一行放到b数组的第0列中，
+ 把数组a的第0行放到b数组的最后一列中，b所指二维数组中其他元素的数据不变
+```
+
+```cpp
+/*45、定义两个N行N列的二维数组a,b,编写程序，将a数组最后一行放到b数组的第0列中，
+ * 把数组a的第0行放到b数组的最后一列中，b所指二维数组中其他元素的数据不变*/
+void Ques_N_N(){
+    int a[3][3]={1,2,3,4,5,6,7,8,9};
+    int b[3][3]={11,12,13,14,15,16,17,18,19};
+    cout<<"输出前a数组："<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    cout<<"输入前b数组："<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<b[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    cout<<"将a数组最后一行放到b数组的第0列中"<<endl;
+    cout<<"把数组a的第0行放到b数组的最后一列中"<<endl;
+    for(int i=0;i<3;i++){
+        int temp;
+        temp=a[2][i];
+        a[2][i]=b[i][0];
+        b[i][0]=temp;
+
+        temp=b[i][2];
+        b[i][2]=a[0][i];
+        a[0][i]=temp;
+
+    }
+    cout<<"输出a数组"<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+    cout<<"输出b数组"<<endl;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<b[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+int main(){
+    Ques_N_N();
+    return 0;
+}
+```
+
+![](./Run_result/45.png)
+
+### 问题46：
