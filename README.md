@@ -1613,3 +1613,139 @@ int main(){
 ![](./Run_result/45.png)
 
 ### 问题46：
+
+```cpp
+46、一个整型的数组有10个数组，删除所有值为n的元素。
+ 主函数完成数字元素的输入，子函数完成删除的功能
+```
+
+```cpp
+/*46、一个整型的数组有10个数组，删除所有值为n的元素。
+ *主函数完成数字元素的输入，子函数完成删除的功能*/
+void Ques_del(int a[]){
+    int n,len=10;
+    cout<<"请输入需要删除的元素："<<endl;
+    cin>>n;
+    for(int i=0;i<10;i++){
+        if(a[i]==n){
+            for(int j=i;j<10;j++){
+                a[j]=a[j+1];
+            }
+            len--;
+        }
+    }
+    cout<<"删除后的元素:"<<endl;
+    for(int i=0;i<len;i++){
+        cout<<a[i]<<"\t";
+    }
+    cout<<"\n";
+}
+int main(){
+    int a[10];
+    for(int i=0;i<10;i++){
+        cout<<"请输入第"<<i+1<<"个数字："<<endl;
+        cin>>a[i];
+    }
+    Ques_del(a);
+    return 0;
+}
+```
+
+![](./Run_result/46.png)
+
+### 问题47：
+
+```cpp
+47、定义一个4行5列的矩阵，调用rand()库函数随机产生20-50，进行赋值
+ 1）输出赋值后的矩阵
+ 2）将矩阵第2列第4列矩阵进行互换
+```
+
+```cpp
+/*47、定义一个4行5列的矩阵，调用rand()库函数随机产生20-50，进行赋值
+ * 1）输出赋值后的矩阵
+ * 2）将矩阵第2列第4列矩阵进行互换*/
+void Ques_E(){
+    int a[4][5];
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            int num=rand()%30+20;  // 产生20-50之间的数字
+            a[i][j]=num;
+        }
+    }
+    cout<<"交换前的矩阵："<<endl;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    for(int i=0;i<4;i++){
+        int temp=a[i][1];
+        a[i][1]=a[i][3];
+        a[i][3]=temp;
+    }
+
+    cout<<"交换后的矩阵："<<endl;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+int main(){
+    Ques_E();
+    return 0;
+}
+```
+
+![](./Run_result/47.png)
+
+### 问题48：
+
+```cpp
+48、有一组有序的数字，现随机输入一个数字，将这个数字有序的插入数组中
+ 例如：1、3、5、9，输入的数字为7
+ 则：1、3、5、7、9
+```
+
+```cpp
+/*48、有一组有序的数字，现随机输入一个数字，将这个数字有序的插入数组中
+ * 例如：1、3、5、9，输入的数字为7
+ * 则：1、3、5、7、9*/
+void Ques_R(){
+    int a[10]={1,4,5,9,13,26,30,35,42},n;
+    cout<<"插入前："<<endl;
+    for(int i=0;i<9;i++){
+        cout<<a[i]<<"\t";
+    }
+    cout<<endl;
+
+    cout<<"插入的数字："<<endl;
+    cin>>n;
+    for(int i=0;i<9;i++){
+        if(a[i]>n){
+            for(int j=9;j>i;j--){
+                a[j]=a[j-1];
+            }
+            a[i]=n;
+            break;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        cout<<a[i]<<"\t";
+    }
+}
+int main(){
+    Ques_R();
+    return 0;
+}
+```
+
+![](./Run_result/48.png)
+
+### 问题49：
+

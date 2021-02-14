@@ -1,0 +1,29 @@
+/*46、一个整型的数组有10个数组，删除所有值为n的元素。
+ *主函数完成数字元素的输入，子函数完成删除的功能*/
+void Ques_del(int a[]){
+    int n,len=10;
+    cout<<"请输入需要删除的元素："<<endl;
+    cin>>n;
+    for(int i=0;i<10;i++){
+        if(a[i]==n){
+            for(int j=i;j<10;j++){
+                a[j]=a[j+1];
+            }
+            len--;
+        }
+    }
+    cout<<"删除后的元素:"<<endl;
+    for(int i=0;i<len;i++){
+        cout<<a[i]<<"\t";
+    }
+    cout<<"\n";
+}
+int main(){
+    int a[10];
+    for(int i=0;i<10;i++){
+        cout<<"请输入第"<<i+1<<"个数字："<<endl;
+        cin>>a[i];
+    }
+    Ques_del(a);
+    return 0;
+}

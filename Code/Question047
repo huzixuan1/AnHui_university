@@ -1,0 +1,37 @@
+/*47、定义一个4行5列的矩阵，调用rand()库函数随机产生20-50，进行赋值
+ * 1）输出赋值后的矩阵
+ * 2）将矩阵第2列第4列矩阵进行互换*/
+void Ques_E(){
+    int a[4][5];
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            int num=rand()%30+20;  // 产生20-50之间的数字
+            a[i][j]=num;
+        }
+    }
+    cout<<"交换前的矩阵："<<endl;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+
+    for(int i=0;i<4;i++){
+        int temp=a[i][1];
+        a[i][1]=a[i][3];
+        a[i][3]=temp;
+    }
+
+    cout<<"交换后的矩阵："<<endl;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+            cout<<a[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+}
+int main(){
+    Ques_E();
+    return 0;
+}
