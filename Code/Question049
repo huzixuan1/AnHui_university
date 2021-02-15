@@ -1,0 +1,52 @@
+/*49、对输入的字符串进行加码
+ * 加码规则：对字符串第奇个字符，若是字母，把字母变成其字母表后一位的，不是字母的不变;
+ * 对于字符串第偶数个字符串，若是字母，则把字母变成其前面的字母，数字不变（大小写亦然）*/
+void Ques_Sc(){
+    string a="AbbaZG Ha-MnnK Yzx";
+    cout<<"原字符串："<<endl;
+    for(int i=0;i<a.length();i++){
+        cout<<a[i];
+    }
+    cout<<"\n"<<"加密后的字符串："<<endl;
+    for(int i=0;i<a.length();i++){
+        // 偶数进行处理
+        if(i%2==1&&a[i]>='a'&&a[i]<='z'){
+            if(a[i]=='a'){
+                a[i]='z';
+            } else{
+                a[i]-=1;
+            }
+        }
+        if(i%2==1&&a[i]>='A'&&a[i]<='Z'){
+            if(a[i]=='A'){
+                a[i]='Z';
+            } else{
+                a[i]-=1;
+            }
+        }
+        // 奇数进行处理
+        if(i%2==0&&a[i]>='a'&&a[i]<='z'){
+            if(a[i]=='z'){
+                a[i]='a';
+            } else{
+                a[i]+=1;
+            }
+        }
+
+        if(i%2==0&&a[i]>='A'&&a[i]<='Z'){
+            if(a[i]=='Z'){
+                a[i]='A';
+            } else{
+                a[i]+=1;
+            }
+        }
+    }
+
+    for(int i=0;i<a.length();i++){
+        cout<<a[i];
+    }
+}
+int main(){
+    Ques_Sc();
+    return 0;
+}
