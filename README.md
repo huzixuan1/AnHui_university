@@ -1814,3 +1814,99 @@ int main(){
 
 ### 问题50：
 
+```cpp
+50、输入一个整数，输出该整数的平方螺旋矩阵。
+ 例如：输入4则输出：
+ 1  2  3  4
+ 12 13 14 5
+ 11 16 15 6
+ 10  9  8 7 
+```
+
+### 问题51：
+
+```cpp
+51、编写字符串拷贝程序，并要求将字符串中的小写字母转换为大写字母
+```
+
+```cpp
+/*51、编写字符串拷贝程序，并要求将字符串中的小写字母转换为大写字母*/
+void Ques_Thra(string str){
+    for(int i=0;i<str.length();i++){
+        if(str[i]>='a'&&str[i]<='z'){
+            str[i]-=32;
+        }
+    }
+    for(int i=0;i<str.length();i++){
+        cout<<str[i];
+    }
+}
+int main(){
+    Ques_Thra("Hello");
+    return 0;
+}
+```
+
+![](./Run_result/51.png)
+
+### 问题52：
+
+```cpp
+52、输入一个以回车结束的字符串（少于80个字符），将字符串逆转序后输出
+```
+
+```cpp
+/*52、输入一个以回车结束的字符串（少于80个字符），将字符串逆转序后输出*/
+void Ques_Th(){
+    string str;
+    cout<<"输入一个少于80的字符串："<<endl;
+    cin>>str;
+    cout<<"转序后的字符串：";
+    for(int i=str.length();i>=0;i--){
+        cout<<str[i];
+    }
+}
+int main(){
+    Ques_Th();
+    return 0;
+}
+```
+
+![](./Run_result/52.png)
+
+### 问题53：
+
+```cpp
+53、输入一个以回车结束的字符串（少于80个字符），再输入一个字符，统计该字符在字符串中的个数并将字符输出
+```
+
+```cpp
+/*53、输入一个以回车结束的字符串（少于80个字符），再输入一个字符，统计该字符在字符串中的个数
+ * 并将字符输出*/
+void Ques_Cha(){
+    int n=0;
+    string str;
+    char a;
+    cout<<"请输入一个字符串（少于80个字符）："<<endl;
+    cin>>str;
+    cout<<"请输入需要统计的字符："<<endl;
+    cin>>a;
+    cout<<"输入的字符串为："<<endl;
+    for(int i=0;i<str.length();i++){
+        if(str[i]==a){
+            n++;
+        }
+        cout<<str[i];
+    }
+    cout<<"其中"<<a<<"字符的个数为："<<n<<"个"<<endl;
+}
+int main(){
+    Ques_Cha();
+    return 0;
+}
+```
+
+![](./Run_result/53.png)
+
+### 问题54：
+

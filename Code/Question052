@@ -1,0 +1,14 @@
+/*52、输入一个以回车结束的字符串（少于80个字符），将字符串逆转序后输出*/
+void Ques_Th(){
+    string str;
+    cout<<"输入一个少于80的字符串："<<endl;
+    cin>>str;
+    cout<<"转序后的字符串：";
+    for(int i=str.length();i>=0;i--){
+        cout<<str[i];
+    }
+}
+int main(){
+    Ques_Th();
+    return 0;
+}

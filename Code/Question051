@@ -1,0 +1,15 @@
+/*51、编写字符串拷贝程序，并要求将字符串中的小写字母转换为大写字母*/
+void Ques_Thra(string str){
+    for(int i=0;i<str.length();i++){
+        if(str[i]>='a'&&str[i]<='z'){
+            str[i]-=32;
+        }
+    }
+    for(int i=0;i<str.length();i++){
+        cout<<str[i];
+    }
+}
+int main(){
+    Ques_Thra("Hello");
+    return 0;
+}

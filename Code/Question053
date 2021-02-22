@@ -1,0 +1,23 @@
+/*53、输入一个以回车结束的字符串（少于80个字符），再输入一个字符，统计该字符在字符串中的个数
+ * 并将字符输出*/
+void Ques_Cha(){
+    int n=0;
+    string str;
+    char a;
+    cout<<"请输入一个字符串（少于80个字符）："<<endl;
+    cin>>str;
+    cout<<"请输入需要统计的字符："<<endl;
+    cin>>a;
+    cout<<"输入的字符串为："<<endl;
+    for(int i=0;i<str.length();i++){
+        if(str[i]==a){
+            n++;
+        }
+        cout<<str[i];
+    }
+    cout<<"其中"<<a<<"字符的个数为："<<n<<"个"<<endl;
+}
+int main(){
+    Ques_Cha();
+    return 0;
+}
